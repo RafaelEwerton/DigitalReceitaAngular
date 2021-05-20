@@ -1,9 +1,9 @@
 export class Farmacia {
     id!: number;
-    nome!: String;
-    cnpj!: String;
-    endereco!: String;
-    contato!: String;
-    dataCadastro!: String;
+    nome!: string;
+    cnpj!: string;
+    endereco!: string;
+    contato!: string;
+    dataCadastro!: string;
 
 }

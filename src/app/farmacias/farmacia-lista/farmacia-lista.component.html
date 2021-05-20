@@ -1,0 +1,50 @@
+<h1 class="mt-4">Farmácias</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consultar Farmacia</li>
+</ol>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-warning" (click)="novoCadastro()">
+                <i class="fa fa-plus"></i> Novo
+            </button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table condesed table-hover">
+                <thead>
+                    <tr>    
+                        <th>ID</th>
+                        <th>nome</th>
+                        <th>cnpj</th>
+                        <th>endereco</th>
+                        <th>contato</th>
+                        <th>Data cadastro</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let farmacia of farmacias">
+                        <td>{{ farmacia.id  }}</td>
+                        <td>{{ farmacia.nome    }}</td>
+                        <td>{{ farmacia.cnpj    }}</td>
+                        <td>{{ farmacia.endereco    }}</td>
+                        <td>{{ farmacia.contato }}</td>
+                        <td>{{ farmacia.dataCadastro }}</td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <i class="fa fa-edit"></i> 
+                            </button>
+                        
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            
+
+        </div>
+    </div>
+</div>

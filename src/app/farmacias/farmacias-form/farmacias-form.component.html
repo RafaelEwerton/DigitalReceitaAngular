@@ -3,55 +3,70 @@
             <li class="breadcrumb-item active">Realize o cadastro da sua farmácia!</li>
         </ol>
         <div class="container">
-            <form>
+            <form #farmaciaForm="ngForm" (ngSubmit)="onSubmit()"> 
+
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-success" role="alert" *ngIf="success == true">
+                            Farmacia salva/atualizada com sucesso!
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="farmacia.id">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>ID:</label>
-                            <input type="text" class="form-control" disabled="true" />
+                            <input type="text" 
+                            [ngModel]="farmacia.id" class="form-control" disabled="true" />
                          </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Data de cadastro:</label>
-                            <input type="text" class="form-control" disabled="true" />
+                            <input type="text" class="form-control" name="dataCadastro"
+                            [ngModel]="farmacia.dataCadastro" disabled="true" />
                          </div>
                     </div>
                  </div>
                  <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Nome: *</label>
-                            <input type="text" class="form-control" />
+                            <label>Nome:*</label>
+                            <input type="text" class="form-control" 
+                            [(ngModel)]="farmacia.nome" name="nome"/>
                          </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>CNPJ: *</label>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control"
+                            [(ngModel)]="farmacia.cnpj" name="cnpj" />
                          </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Endereço: *</label>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" 
+                            [(ngModel)]="farmacia.endereco" name="endereco"/>
                          </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Contato: *</label>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" 
+                            [(ngModel)]="farmacia.contato" name="contato"/>
                          </div>
                     </div>
                  </div>
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <button type="submit" class="btn btn-success">
                             <i class="fa fa-save"></i> Salvar
-
-
                         </button>
-                    </div>    
+                        <button type="button" class="btn btn-danger ml-2" (click)='voltarParaListagem()'>
+                            <i class="fa fa-arrow-left"></i> Voltar
+                        </button>
+                    </div>  
 
                 </div>    
             </form>

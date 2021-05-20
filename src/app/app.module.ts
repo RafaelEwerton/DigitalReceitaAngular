@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component';
 import { FarmaciasModule } from './farmacias/farmacias.module';
+import { FormsModule } from '@angular/forms';
+import { FarmaciasService} from './farmacias.service'
+import {HttpClientModule} from '@angular/common/http'
+
+
 
 @NgModule({
   declarations: [
@@ -15,12 +20,17 @@ import { FarmaciasModule } from './farmacias/farmacias.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    FarmaciasModule
+    FarmaciasModule,
+    FormsModule
+
 
   ],
-  providers: [],
+  providers: [
+    FarmaciasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
